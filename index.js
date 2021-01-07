@@ -48,8 +48,7 @@ client.on('message', function(message) {
     })
   }
 
-  else if (command === 'move'){
-    console.log(message.channel.parent)
+  else if (command === 'start'){
     if(message.channel.parent.id !== newGames){
       message.reply(`Command must be made in a channel that belongs to the "New Games" category.`)
       return
