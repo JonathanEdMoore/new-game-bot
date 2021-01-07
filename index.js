@@ -10,6 +10,10 @@ const client = new Discord.Client()
 
 const prefix = '!'
 
+const newGames = '796486294271688765'
+
+const currGames = '796486354359549993'
+
 
 client.on('message', function(message) {
   if (message.author.bot) {
@@ -40,9 +44,17 @@ client.on('message', function(message) {
     message.guild.channels.create(args[0], {
       type: 'text'
     }).then((channel) => {
-      const categoryId = '796486294271688765'
-      channel.setParent(categoryId)
+      channel.setParent(newGames)
     })
+  }
+
+  else if (command === 'move'){
+    console.log(message.channel.parent)
+    if(message.channel.parent.id !== newGames){
+      message.reply(`Command must be made in a channel that belongs to the "New Games" category.`)
+      return
+    }
+    message.channel.setParent(currGames)
   }
 })
 
