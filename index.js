@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable quotes */
 'use strict'
 
 const Discord = require('discord.js')
