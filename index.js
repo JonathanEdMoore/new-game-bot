@@ -34,7 +34,7 @@ client.on('message', function(message) {
 
   else if(command ==='create'){
     if(message.channel.name !== 'create-new-game'){
-      message.reply(`Command must be made in the "create-new-game channel".`)
+      message.reply(`Command must be made in the "create-new-game" channel.`)
       return
     }
     message.guild.channels.create(args[0], {
