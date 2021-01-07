@@ -3,8 +3,11 @@
 const Discord = require('discord.js')
 const config = require('./config')
 
+
 const client = new Discord.Client()
+
 const prefix = '!'
+
 
 client.on('message', function(message) {
   if (message.author.bot) {
@@ -21,6 +24,15 @@ client.on('message', function(message) {
   if(command === 'ping'){
     const timeToken = Date.now() - message.createdTimestamp
     message.reply(`Pong! This message had a latency of ${timeToken}ms`)
+  }
+
+  else if(command ==='create'){
+    message.guild.channels.create(args[0], {
+      type: 'text'
+    }).then((channel) => {
+      const categoryId = '796486294271688765'
+      channel.setParent(categoryId)
+    })
   }
 })
 
