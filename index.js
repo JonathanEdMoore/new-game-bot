@@ -16,6 +16,10 @@ client.on('message', function(message) {
   if(!message.content.startsWith(prefix)) {
     return
   }
+  if(message.channel.name !== 'create-new-game'){
+    message.reply(`Command must be made in the "create-new-game channel".`)
+    return
+  }
 
   const commandBody = message.content.slice(prefix.length)
   const args = commandBody.split(' ')
