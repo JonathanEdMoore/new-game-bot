@@ -18,7 +18,8 @@
   "author": "\"Jonathan Moore \\ <jonathan.moore6247@gmail.com\\> (https://jonathan-moore.now.sh)",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
